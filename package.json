@@ -1,5 +1,5 @@
 {
-  "name": "js-data-structures",
+  "name": "@wenjw/data-structures",
   "version": "0.0.1",
   "description": "js 数据结构",
   "main": "index.js",
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/lwpersonal/dataStructures.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "javascript",
     "typescript",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/lwpersonal/dataStructures/issues"
   },
-  "homepage": "https://github.com/lwpersonal/dataStructures#readme"
+  "homepage": "https://github.com/lwpersonal/dataStructures#readme",
+  "directories": {
+    "test": "test"
+  }
 }
