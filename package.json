@@ -1,0 +1,24 @@
+{
+  "name": "js-data-structures",
+  "version": "0.0.1",
+  "description": "js 数据结构",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwpersonal/dataStructures.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "dataStructures"
+  ],
+  "author": "wenjw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lwpersonal/dataStructures/issues"
+  },
+  "homepage": "https://github.com/lwpersonal/dataStructures#readme"
+}
