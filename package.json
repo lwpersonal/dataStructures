@@ -1,6 +1,6 @@
 {
   "name": "@wenjw/data-structures",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "js 数据结构",
   "main": "index.js",
   "scripts": {
