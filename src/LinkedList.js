@@ -173,6 +173,13 @@ class LinkedList {
       index++;
     }
   }
+
+  /**
+   * 复制链表
+   *
+   * @memberof LinkedList
+   */
+  clone() {}
 }
 
 const list1 = new LinkedList();

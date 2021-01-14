@@ -1,6 +1,6 @@
 {
   "name": "@wenjw/data-structures",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "js 数据结构",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/lwpersonal/dataStructures.git"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": [
     "javascript",
     "typescript",
