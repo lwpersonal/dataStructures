@@ -1,13 +1,13 @@
 // TAG 单向链表
 
-class ListNode {
+export class ListNode {
   constructor(value = null) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList {
+export default class LinkedList {
   constructor() {
     this.head = null;
     this.length = 0;
@@ -183,42 +183,34 @@ class LinkedList {
    *
    * @static
    * @param {*} list
-   * @param {*} [formatVal=(val) => val]
-   * @return {*} 
+   * @param {*} [formatVal=(val) => val] 自由实现格式化函数，实现值的深度复制
+   * @return {*}
    * @memberof LinkedList
    */
   static clone(list, formatVal = (val) => val) {
-    const head = list.head;
+    let head = list.head;
     const resList = new LinkedList();
-    list.map(head, (val, index) => {
-      const newVal =
-        typeof formatVal === 'function' ? formatVal(val, index) : val;
-      resList.append(newVal);
-    });
+    if (head === null) {
+      return resList;
+    }
+    // 单独处理头部
+    const formattedVal =
+      typeof formatVal === 'function' ? formatVal(head.value) : head.value;
+    resList.append(formattedVal);
+    // 递归复制
+    function fn(sourceNode, nowNode) {
+      if (!sourceNode) {
+        return false;
+      }
+      const formattedVal =
+        typeof formatVal === 'function'
+          ? formatVal(sourceNode.value)
+          : sourceNode.value;
+      nowNode.next = new ListNode(formattedVal);
+      resList.length++;
+      return fn(sourceNode.next, nowNode.next);
+    }
+    fn(head.next, resList.head);
     return resList;
   }
 }
-
-const list1 = new LinkedList();
-list1.insert(2, 0);
-list1.insert(4, 0);
-list1.insert(41, 1);
-
-const newList = LinkedList.clone(list1);
-const newList1 = list1.clone();
-// console.log(list1.indexOf(40));
-// console.log(list1.indexOf(4));
-// console.log(list1.indexOf(2));
-// list1.remove(2);
-// list1.remove(1);
-// list1.remove(0);
-// list1.append(1);
-// list1.append(4);
-// list1.append(4);
-// list1.append(41);
-// list1.map((item, index) => {
-//   console.log(item, index);
-// });
-console.log(list1.toString(), newList.toString(), newList1.toString());
-
-// export default LinkedList;

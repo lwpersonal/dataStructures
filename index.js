@@ -1,10 +1,3 @@
-class JsDataStructures {
-  test() {
-    console.log('test');
-  }
-  good() {
-    return good
-  }
-}
+import LinkedList from './src/LinkedList';
 
-export default JsDataStructures;
+export { LinkedList };
