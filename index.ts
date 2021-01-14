@@ -1,3 +1,7 @@
 import LinkedList from './src/LinkedList';
 
-export default { LinkedList };
+const data = {
+  LinkedList
+}
+
+export default data;
