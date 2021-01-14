@@ -1,3 +1,3 @@
 import LinkedList from './src/LinkedList';
 
-export { LinkedList };
+export default { LinkedList };
