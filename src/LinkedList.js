@@ -161,11 +161,11 @@ class LinkedList {
    * @param {*} fn
    * @memberof LinkedList
    */
-  map(fn) {
+  map(head, fn) {
     if (typeof fn !== 'function') {
       throw TypeError(`the fn must be function, now type ${typeof fn}`);
     }
-    let current = this.head;
+    let current = head;
     let index = 0;
     while (current) {
       typeof fn === 'function' && fn(current.value, index);
@@ -174,18 +174,38 @@ class LinkedList {
     }
   }
 
+  clone() {
+    return LinkedList.clone(this);
+  }
+
   /**
    * 复制链表
    *
+   * @static
+   * @param {*} list
+   * @param {*} [formatVal=(val) => val]
+   * @return {*} 
    * @memberof LinkedList
    */
-  clone() {}
+  static clone(list, formatVal = (val) => val) {
+    const head = list.head;
+    const resList = new LinkedList();
+    list.map(head, (val, index) => {
+      const newVal =
+        typeof formatVal === 'function' ? formatVal(val, index) : val;
+      resList.append(newVal);
+    });
+    return resList;
+  }
 }
 
 const list1 = new LinkedList();
 list1.insert(2, 0);
 list1.insert(4, 0);
 list1.insert(41, 1);
+
+const newList = LinkedList.clone(list1);
+const newList1 = list1.clone();
 // console.log(list1.indexOf(40));
 // console.log(list1.indexOf(4));
 // console.log(list1.indexOf(2));
@@ -199,6 +219,6 @@ list1.insert(41, 1);
 // list1.map((item, index) => {
 //   console.log(item, index);
 // });
-console.log(list1.toString());
+console.log(list1.toString(), newList.toString(), newList1.toString());
 
 // export default LinkedList;
