@@ -1,7 +1,7 @@
 // TAG 单向链表
 
 export class ListNode {
-  constructor(value = null) {
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
@@ -161,11 +161,11 @@ export default class LinkedList {
    * @param {*} fn
    * @memberof LinkedList
    */
-  map(head, fn) {
+  map(fn) {
     if (typeof fn !== 'function') {
       throw TypeError(`the fn must be function, now type ${typeof fn}`);
     }
-    let current = head;
+    let current = this.head;
     let index = 0;
     while (current) {
       typeof fn === 'function' && fn(current.value, index);
